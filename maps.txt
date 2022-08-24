@@ -1,0 +1,45 @@
+----------------------------------------
+ Map Interface
+
+A map is a data structure that supports the key-value pair mapping for the data. This interface doesn’t support duplicate keys because the same key cannot have multiple mappings. A map is useful if there is data and we wish to perform operations on the basis of the key. This map interface is implemented by various classes like HashMap, TreeMap, etc. Since all the subclasses implement the map, we can instantiate a map object with any of these classes. For example,
+ 
+
+Map<T> hm = new HashMap<> (); 
+Map<T> tm = new TreeMap<> ();
+ 
+Where T is the type of the object. 
+
+The frequently used implementation of a Map interface is a HashMap. 
+ 
+HashMap
+
+ HashMap provides the basic implementation of the Map interface of Java. It stores the data in (Key, Value) pairs. To access a value in a HashMap, we must know its key. HashMap uses a technique called Hashing. Hashing is a technique of converting a large String to a small String that represents the same String so that the indexing and search operations are faster. HashSet also uses HashMap internally.
+
+package collections;
+
+import java.util.*;
+public class hashmap {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		HashMap<Integer,String> hm=new HashMap<Integer,String>();
+		hm.put(1, "Tim");
+		hm.put(2, "Mohit");
+		hm.put(3, "Ramya");
+		hm.put(4, "Saurav");
+		
+		System.out.println("\nThe elements of the HashMap are:");
+		System.out.println(hm);
+		System.out.println(hm.keySet());
+		System.out.println(hm.values());
+		
+		for(Map.Entry< Integer, String > m :hm.entrySet()) {
+			System.out.println(m.getKey()+"   "+m.getValue());
+			
+		}
+		System.out.println(hm.get(3));
+		
+		
+	}
+
+}
